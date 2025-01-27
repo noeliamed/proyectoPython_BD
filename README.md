@@ -5,12 +5,12 @@ Este proyecto consiste en codificar tres programas en Python que realicen operac
 Las tablas que voy a utilizar para el enunciado son: artistas, albumes y tours.
 
 ## Enunciado
-  1. Se introduce el nombre del artista para saber cuántos tours han hecho.
-  2. Se introduce el nombre del artista y se lista los álbumes que tiene.
-  3. Listar el nombre del álbum que ha hecho cada artista el cual el nombre del grupo/solista empiece por una letra introducida por el usuario. 
-  4. Inserta en la tabla de tours, los datos de este.
-  5. Eliminar aquellos nombres de la tabla de artistas que tengan más de 15 caracteres.
-  6. Actualizar todos los álbumes de los artistas.
+  1. Se introduce el nombre de un artista y muestra una lista con cuántos tours ha realizado.
+  2.​ Se introduce el nombre de un artista y se filtra todos los álbumes que ha lanzado.
+  3.​ Se introduce una letra y lista los álbumes de los artistas cuyo nombre empiece con esa letra.
+  4.​ Se introducen los datos de un nuevo tour (nombre del tour, fechas de inicio y fin, países visitados) y se insertan en la tabla de tours.
+  5.​ Se eliminan los artistas cuyo nombre tenga más de 15 caracteres.
+  6.​ Introduce el nombre de un tour y actualiza el país que ha visitado el artista.
 
 ## CREACIÓN DE TABLAS EN ORACLE
 
