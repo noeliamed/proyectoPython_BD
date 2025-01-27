@@ -2,7 +2,7 @@
 
 Este proyecto consiste en codificar tres programas en Python que realicen operaciones DML sobre una base de datos en los SGBD relacionales (Oracle, MariaDB y PostgreSQL). 
 
-Las tablas que voy a utilizar para el enunciado son: artistas, albumes y tours.
+Las tablas que voy a utilizar para el enunciado son: artistas, álbumes y tours.
 
 ## Enunciado
 1. Se introduce el nombre de un artista y muestra una lista con cuántos tours ha realizado.
