@@ -54,4 +54,3 @@ INSERT INTO albumes (album_id, artista_id, nombre_album, fecha_lanzamiento) VALU
 INSERT INTO tours (tour_id, artista_id, nombre_tour, fecha_inicio, fecha_fin, paises_visitados) VALUES ('34569', '7771', 'BTS World Tour', TO_DATE('2019-05-01', 'YYYY-MM-DD'), TO_DATE('2020-02-21', 'YYYY-MM-DD'), 'EE.UU., Japón, Corea, Europa');
 INSERT INTO tours (tour_id, artista_id, nombre_tour, fecha_inicio, fecha_fin, paises_visitados) VALUES ('33470', '7771', 'Love Yourself World Tour', TO_DATE('2018-08-25', 'YYYY-MM-DD'), TO_DATE('2019-04-07', 'YYYY-MM-DD'), 'EE.UU., Canadá, Japón, Europa, Australia, Corea');
 INSERT INTO tours (tour_id, artista_id, nombre_tour, fecha_inicio, fecha_fin, paises_visitados) VALUES ('43475', '1372', 'The Eras Tour', TO_DATE('2023-03-17', 'YYYY-MM-DD'), TO_DATE('2023-08-09', 'YYYY-MM-DD'), 'EE.UU., Canadá, México, Europa, Asia, Australia');
-COMMIT;
