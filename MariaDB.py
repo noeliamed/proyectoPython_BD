@@ -1,7 +1,7 @@
 # MariaDB [(none)]> CREATE USER 'noelia'@'localhost' IDENTIFIED BY 'noelia';
 # MariaDB [(none)]> GRANT ALL PRIVILEGES ON *.* TO 'noelia'@'localhost';
 
-from funciones import MariaDBmenu,MariaDB_ArtistasTours, MariaDB_AlbumesPorArtista, MariaDB_ListarAlbumesArtistasPorLetra, MariaDBInsertarTour, MariaDBBorrarArtistas15, MariaDBActualizarPaises
+from funciones import MariaDBmenu,MariaDB_ArtistasTours,MariaDB_AlbumesPorArtista,MariaDB_ListarAlbumesArtistasPorLetra,MariaDBInsertarTour,MariaDBBorrarArtistas15,MariaDBActualizarPaises
 import mysql.connector
 
 opcion_elegida=0
