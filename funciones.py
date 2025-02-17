@@ -120,9 +120,8 @@ def PostgreSQLInsertarTour(cursor):
     """
 
     try:
-        # Ejecutamos la consulta, pasamos los valores como parámetros para evitar inyecciones SQL
         cursor.execute(consulta, (nombre_artista, nombre_tour, fecha_inicio, fecha_fin, paises_visitados))
-        # Imprimimos el ID del nuevo tour insertado
+        
         nuevo_tour_id = cursor.fetchone()[0]
         print(f"Se ha insertado el nuevo tour correctamente con ID: {nuevo_tour_id}.")
     except Exception as e:
