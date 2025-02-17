@@ -101,4 +101,31 @@ def MariaDBActualizarPaises(cursor):
         cursor.rollback()
 
 
+# 3 en Postgres: 
+def PostgreSQLInsertarTour(cursor):
+    tour_id = input("Introduce el ID del tour: ")
+    nombre_artista = input("Introduce el ID del artista asociado al tour: ")
+    nombre_tour = input("Introduce el nombre del tour: ")
+    fecha_inicio = input("Introduce la fecha de inicio (YYYY-MM-DD): ")
+    fecha_fin = input("Introduce la fecha de fin (YYYY-MM-DD): ")
+    paises_visitados = input("Introduce los países visitados (separados por comas): ")
 
+    consulta = """
+    INSERT INTO tours (tour_id, artista_id, nombre_tour, fecha_inicio, fecha_fin, paises_visitados)
+    VALUES (
+        CONCAT('T', LPAD(COALESCE((SELECT COUNT(*) FROM tours), 0) + 1, 4, '0')),
+        %s, %s, %s, %s, %s
+    )
+    RETURNING tour_id;
+    """
+
+    try:
+        # Ejecutamos la consulta, pasamos los valores como parámetros para evitar inyecciones SQL
+        cursor.execute(consulta, (nombre_artista, nombre_tour, fecha_inicio, fecha_fin, paises_visitados))
+        # Imprimimos el ID del nuevo tour insertado
+        nuevo_tour_id = cursor.fetchone()[0]
+        print(f"Se ha insertado el nuevo tour correctamente con ID: {nuevo_tour_id}.")
+    except Exception as e:
+        print("Error al insertar el tour.")
+        print(str(e))
+        cursor.rollback()
