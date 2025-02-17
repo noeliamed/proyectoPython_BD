@@ -27,7 +27,7 @@ while opcion_elegida != 6 :
     # 4. Se eliminan los artistas cuyo nombre tenga más de 15 caracteres.
     elif opcion_elegida == 4:
         MariaDBBorrarArtistas15(cursor)
-    # 5. Introduce el nntroduce el nombre de un tour y actualiza el país que ha visitado el artista.
+    # 5. Introduce el introduce el nombre de un tour y actualiza el país que ha visitado el artista.
     elif opcion_elegida == 5:
         MariaDBActualizarPaises(cursor)
 
