@@ -1,8 +1,11 @@
-from funciones import MariaDBmenu,MariaDB_ArtistasTours,MariaDB_AlbumesPorArtista,MariaDB_ListarAlbumesArtistasPorLetra,MariaDBInsertarTour,MariaDBBorrarArtistas15,MariaDBActualizarPaises
-import psycopg2
+import sys
+import MySQLdb
+
+from funciones import MariaDBmenu,MariaDB_ArtistasTours, MariaDB_AlbumesPorArtista, MariaDB_ListarAlbumesArtistasPorLetra, MariaDBInsertarTour, MariaDBBorrarArtistas15, MariaDBActualizarPaises
+
 
 opcion_elegida=0
-conn = psycopg2.connect(user="noelia", password="noelia", host="192.168.105.133",port='5433', database="pconsultas")
+conn = MySQLdb.connector.connect(host='localhost', user='root', password='root',database='pconsultas')
 cursor = conn.cursor()
 
 while opcion_elegida != 6 :
@@ -19,7 +22,7 @@ while opcion_elegida != 6 :
         MariaDB_ListarAlbumesArtistasPorLetra(cursor)
     # 3. Se introducen los datos de un nuevo tour (nombre del tour, fechas de inicio y fin, países visitados) y se insertan en la tabla de tours.
     elif opcion_elegida == 3:
-        PostgreSQLInsertarTour(cursor)
+        MariaDBInsertarTour(cursor)
     # 4. Se eliminan los artistas cuyo nombre tenga más de 15 caracteres.
     elif opcion_elegida == 4:
         MariaDBBorrarArtistas15(cursor)
