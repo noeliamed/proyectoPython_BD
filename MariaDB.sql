@@ -8,6 +8,7 @@ fecha_debut DATE,
 CONSTRAINT pk_artistas_id PRIMARY KEY (artista_id)
 );
 
+ALTER TABLE artistas ADD CONSTRAINT unique_nombre UNIQUE (nombre);
 
 CREATE TABLE albumes (
 album_id VARCHAR(5) NOT NULL,
@@ -17,7 +18,10 @@ fecha_lanzamiento DATE,
 CONSTRAINT pk_album_ID PRIMARY KEY (album_id)
 );
 
---CONSTRAINT fk_albumes_artista FOREIGN KEY (nombre_artista) REFERENCES artistas(nombre)
+ALTER TABLE albumes
+ADD CONSTRAINT fk_nombre_artista
+FOREIGN KEY (nombre_artista) REFERENCES artistas(nombre);
+
 
 
 
@@ -31,10 +35,10 @@ paises_visitados VARCHAR(30),
 CONSTRAINT pk_tours_id PRIMARY KEY (tour_id)
 );
 
-INSERT INTO tours (tour_id, nombre_artista, nombre_tour, fecha_inicio, fecha_fin, paises_visitados) VALUES ('34569', 'BTS World Tour', '2019-05-01', '2020-02-21', 'Estados Unidos, Japón, Corea del Sur, Europa');
+ALTER TABLE tours
+ADD CONSTRAINT fk_nombre_artista_tours
+FOREIGN KEY (nombre_artista) REFERENCES artistas(nombre);
 
-
---CONSTRAINT fk_tours_artID FOREIGN KEY (nombre_artista) REFERENCES artistas(nombre)
 
 
 
@@ -120,8 +124,6 @@ INSERT INTO tours (tour_id, nombre_artista, nombre_tour, fecha_inicio, fecha_fin
 VALUES 
 ('SC001', 'Sabrina Carpenter', 'Emails I Can’t Send', '2022-06-01', '2022-12-15', 'EE.UU, Canadá, Reino Unido'),
 ('SC002', 'Sabrina Carpenter', 'Singularity Tour', '2023-01-01', '2023-06-30', 'Australia, Francia, México');
-
-
 
 
 
