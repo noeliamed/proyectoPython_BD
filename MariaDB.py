@@ -1,11 +1,14 @@
 # MariaDB [(none)]> CREATE USER 'noelia'@'localhost' IDENTIFIED BY 'noelia';
 # MariaDB [(none)]> GRANT ALL PRIVILEGES ON *.* TO 'noelia'@'localhost';
 
-from funciones import MariaDBmenu,MariaDB_ArtistasTours,MariaDB_AlbumesPorArtista,MariaDB_ListarAlbumesArtistasPorLetra,MariaDBInsertarTour,MariaDBBorrarArtistas15,MariaDBActualizarPaises
-import mysql.connector
+import sys
+import MySQLdb
 
-opcion_elegida=0
-conn = mysql.connector.connect(user="noelia", password="noelia", host="192.168.105.132", database="consultas")
+from funciones import MariaDBmenu, MariaDB_ArtistasTours, MariaDB_AlbumesPorArtista, MariaDB_ListarAlbumesArtistasPorLetra, MariaDBInsertarTour, MariaDBBorrarArtistas15, MariaDBActualizarPaises
+
+
+opcion_elegida = 0
+conn = MySQLdb.connect(host='localhost', user='root', password='root', database='pconsultas')
 cursor = conn.cursor()
 
 while opcion_elegida != 6 :
