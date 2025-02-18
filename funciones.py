@@ -135,3 +135,31 @@ def PostgreSQLInsertarTour(cursor):
     except Exception as e:
         print("Error al insertar el tour:", str(e))
         cursor.rollback()
+
+
+
+
+# 3 Función para insertar un nuevo tour en PostgreSQL
+def PostgresInsertarTour(cursor):
+    try:
+        # Pedir datos al usuario
+        nombre_artista = input("Introduce el ID del artista asociado al tour: ")
+        nombre_tour = input("Introduce el nombre del tour: ")
+        fecha_inicio = input("Introduce la fecha de inicio (YYYY-MM-DD): ")
+        fecha_fin = input("Introduce la fecha de fin (YYYY-MM-DD): ")
+        paises_visitados = input("Introduce los países visitados (separados por comas): ")
+
+        # Consulta SQL con parámetros
+        consulta = """
+        INSERT INTO tours (nombre_artista, nombre_tour, fecha_inicio, fecha_fin, paises_visitados)
+        VALUES (%s, %s, %s, %s, %s);
+        """
+
+        # Ejecutar la consulta con los valores introducidos por el usuario
+        cursor.execute(consulta, (nombre_artista, nombre_tour, fecha_inicio, fecha_fin, paises_visitados))
+
+        # Confirmar los cambios
+        print("Se ha insertado el nuevo tour correctamente.")
+    except Exception as e:
+        print("Error al insertar el tour:", str(e))
+        cursor.rollback()
